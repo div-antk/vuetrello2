@@ -1,5 +1,5 @@
 <template>
-  <form class="addlist" @submit.prevent="addlist">
+  <form class="addlist" @submit.prevent="addList">
     <input v-model="title"
       type="text"
       class="text-input"
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  data: function(){
+  data: function() {
     return {
       title: '',
     }
@@ -22,7 +22,7 @@ export default {
     addList: function() {
       this.$store.dispatch('addlist', { title: this.title })
       this.title = ''
-    }
+    },
   }
 }
 </script>
