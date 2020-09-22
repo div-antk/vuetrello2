@@ -42,7 +42,6 @@ const store = new Vuex.Store({
     },
   },
   getters: {
-  // modules: {
   }
 })
 
