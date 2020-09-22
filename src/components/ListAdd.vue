@@ -10,7 +10,7 @@
     <button type="submit"
       class="add-button"
       v-if="isEditing || titleExists"
-      >
+    >
       Add
     </button>
   </form>
@@ -50,6 +50,6 @@ export default {
     finishEditing() {
       this.isEditing = false
     },
-  },
+  }
 }
 </script>
