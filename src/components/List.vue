@@ -2,6 +2,7 @@
   <div class="list">
     <div class="listheader">
       <p class="list-title">{{ title }}</p>
+      <p class="list-counter">total: {{ toralCardInList }}</p>
       <div class="deletelist" @click="removeList">×</div>
     </div>
     <card v-for="(item, index) in cards"
@@ -46,6 +47,12 @@ export default {
         this.$store.dispatch('removelist', { listIndex: this.listIndex })
       }
     },
+  },
+  computed: {
+    toralCardInList() {
+      return this.cards.length;
+    }
   }
+
 }
 </script>
