@@ -4,7 +4,7 @@
       my Trello
     </header>
     <main>
-      <p class="info-line">All: 0 tasks</p>
+      <p class="info-line">All: {{ totalCardCount }} tasks</p>
       <div class="list-index">
         <!-- listコンポーネントを呼び出し、必要なデータを渡す（propsで定義したデータ） -->
         <!-- v-vindを : として省略できる -->
@@ -37,7 +37,10 @@ export default {
     ...mapState([
       'lists'
     ]),
-  },
+    totalCardCount() {
+      return this.$store.getters.totalCardCount;
+    },
+  }
 }
 
 </script>
