@@ -40,20 +40,20 @@ export default {
       if (this.bodyExists) {
         classList.push('addable')
       }
-      return classList
+      return classList;
     },
     bodyExists() {
       return this.body.length > 0
     },
   },
   methods: {
-    startEditing() {
+    startEditing: function() {
       this.isEditing = true
     },
-    finishEditing() {
+    finishEditing: function() {
       this.isEditing = false
     },
-    addCardToLost: function() {
+    addCardToList: function() {
       this.$store.dispatch('addCardToList', {body: this.body, listIndex: this.listIndex})
       this.body = ''
     },
