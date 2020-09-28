@@ -8,7 +8,10 @@
       <div class="list-index">
         <!-- listコンポーネントを呼び出し、必要なデータを渡す（propsで定義したデータ） -->
         <!-- v-vindを : として省略できる -->
-        <draggable class="list-index">
+        <draggable :list="lists"
+          @end="movingList"
+          class="list-index"
+        >
           <list v-for="(item, index) in lists"
             :key="item.id"
             :title="item.title"
@@ -49,6 +52,9 @@ export default {
     movingCard: function() {
       this.$store.dispatch('updateList', { lists: this.lists })
     },
+    movingList: function() {
+      this.$store.dispatch('updateList', { lists: this.lists })
+    } 
   },
 }
 
